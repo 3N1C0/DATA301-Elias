@@ -1,0 +1,57 @@
+# DATA 301: Introduction to Machine Learning - Fall 2026
+# Packages used across the semester (Day 1-22, exams, final project).
+#
+# Install once, right after cloning your repo:
+#   conda activate machinelearning
+#   pip install -r requirements.txt
+#
+# ---------------------------------------------------------------------------
+# NOTE ON PYTORCH (read this if the download looks enormous)
+# On Linux, plain `pip install torch` pulls the CUDA build - roughly 2.5 GB -
+# even if you have no NVIDIA GPU. Everything in this course is designed to run
+# on CPU, so on Linux install the much smaller CPU-only build FIRST:
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# then run `pip install -r requirements.txt` as normal.
+# On macOS and Windows the default install is already the right one.
+# ---------------------------------------------------------------------------
+
+# Core scientific stack
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+
+# Jupyter
+jupyterlab
+ipywidgets
+
+# Classical ML (Units 1-2)
+scikit-learn
+xgboost
+optuna
+graphviz
+
+# Deep learning (Units 3-5) - see the PyTorch note above
+torch
+torchvision
+torchmetrics
+
+# Transformers and LLMs (Unit 5)
+transformers
+datasets
+tokenizers
+sentence-transformers
+accelerate
+peft
+einops
+
+# Utilities
+pillow
+requests
+tqdm
+
+# Git hygiene - strips notebook outputs so .ipynb diffs stay readable
+nbstripout
