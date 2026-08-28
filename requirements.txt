@@ -5,53 +5,61 @@
 #   conda activate machinelearning
 #   pip install -r requirements.txt
 #
+# Versions are pinned on purpose. Everyone in the class runs the same versions,
+# so a notebook that works in September still works in November, and when
+# something breaks we are all looking at the same thing.
+#
 # ---------------------------------------------------------------------------
 # NOTE ON PYTORCH (read this if the download looks enormous)
-# On Linux, plain `pip install torch` pulls the CUDA build - roughly 2.5 GB -
-# even if you have no NVIDIA GPU. Everything in this course is designed to run
-# on CPU, so on Linux install the much smaller CPU-only build FIRST:
+# On Linux, plain `pip install torch` pulls the CUDA build, roughly 2.5 GB, even
+# if you have no NVIDIA GPU. Everything in this course is designed to run on
+# CPU, so on Linux install the much smaller CPU-only build FIRST:
 #
-#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cpu
 #
 # then run `pip install -r requirements.txt` as normal.
 # On macOS and Windows the default install is already the right one.
 # ---------------------------------------------------------------------------
 
 # Core scientific stack
-numpy
-pandas
-scipy
-matplotlib
-seaborn
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.1
+matplotlib==3.11.1
+seaborn==0.13.2
 
 # Jupyter
-jupyterlab
-ipywidgets
+jupyterlab==4.6.3
+ipywidgets==8.1.9
 
 # Classical ML (Units 1-2)
-scikit-learn
-xgboost
-optuna
-graphviz
+scikit-learn==1.9.0
+optuna==4.9.0
+
+# On Linux, plain `xgboost` depends on nvidia-nccl, which is ~290 MB of GPU
+# libraries this course never uses. `xgboost-cpu` is the same version from the
+# same maintainers, built without them, and still imports as `import xgboost`.
+xgboost-cpu==3.4.1; sys_platform == "linux"
+xgboost==3.4.1; sys_platform != "linux"
 
 # Deep learning (Units 3-5) - see the PyTorch note above
-torch
-torchvision
-torchmetrics
+torch==2.13.0
+torchvision==0.28.0
+torchmetrics==1.9.0
 
 # Transformers and LLMs (Unit 5)
-transformers
-datasets
-tokenizers
-sentence-transformers
-accelerate
-peft
-einops
+transformers==5.16.1
+datasets==5.0.1
+tokenizers==0.23.1
+sentence-transformers==6.0.0
+accelerate==1.14.0
+peft==0.20.0
+einops==0.8.2
 
 # Utilities
-pillow
-requests
-tqdm
+pillow==12.3.0
+requests==2.34.2
+tqdm==4.70.0
 
 # Git hygiene - strips notebook outputs so .ipynb diffs stay readable
-nbstripout
+nbstripout==0.9.1
