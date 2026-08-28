@@ -34,7 +34,7 @@ nbstripout --install
 
 `nbstripout` strips notebook outputs from every commit, so `.ipynb` diffs come
 from actual code changes instead of from someone re-running a cell. It's in
-`requirements.txt`, but you have to activate it once per clone — that part
+`requirements.txt`, but you have to activate it once per clone. That part
 doesn't happen automatically.
 
 **Read the PyTorch note at the top of `requirements.txt` before you install.**
@@ -51,13 +51,13 @@ git push origin hw/week-03
 ```
 
 Then open a **Pull Request into `main` in your own repo**. That PR is your
-submission. I review it, leave comments inline — that's your feedback — and
-merging it closes out the assignment.
+submission. I review it and leave comments inline. Those comments are your
+feedback, and merging the PR closes out the assignment.
 
 You're encouraged to add a classmate as a reviewer on your PRs. One rule:
 **reviewers comment, reviewers don't commit.** Reading someone else's code and
 asking good questions about it is the point; writing it for them is not.
 
 ---
-*Full workflow — branching, Pull Requests, review, the whole cycle — is on the
-last page of the syllabus.*
+*The full workflow (branching, Pull Requests, review, the whole cycle) is on
+the last page of the syllabus.*
