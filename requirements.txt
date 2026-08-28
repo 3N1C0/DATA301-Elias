@@ -1,8 +1,7 @@
 # DATA 301: Introduction to Machine Learning - Fall 2026
 # Packages used across the semester (Day 1-22, exams, final project).
 #
-# Install once, right after cloning your repo:
-#   conda activate machinelearning
+# Install once, from inside your repo folder:
 #   pip install -r requirements.txt
 #
 # Versions are pinned on purpose. Everyone in the class runs the same versions,
@@ -31,6 +30,10 @@ seaborn==0.13.2
 # Jupyter
 jupyterlab==4.6.3
 ipywidgets==8.1.9
+
+# Adds a Git panel and a terminal to JupyterLab. On Windows especially, this is
+# the easiest way to get to a terminal without hunting for one.
+jupyterlab-git==0.54.1
 
 # Classical ML (Units 1-2)
 scikit-learn==1.9.0

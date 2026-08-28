@@ -27,7 +27,6 @@ git push origin main
 After you clone your own repo:
 
 ```
-conda activate machinelearning
 pip install -r requirements.txt
 nbstripout --install
 ```
