@@ -1,0 +1,72 @@
+# DATA 301: Introduction to Machine Learning - Fall 2026
+# Packages used across the semester (Day 1-22, exams, final project).
+#
+# Install once, from inside your repo folder:
+#   pip install -r requirements.txt
+#
+# These install into your regular Anaconda Python, alongside whatever your other
+# classes use, so almost nothing here is locked to an exact version. If you
+# already have a working numpy or pandas, this leaves it alone.
+#
+# The three deep learning packages have an upper limit on the major version. Those
+# libraries change fast and a new major release can break notebooks mid semester.
+# The limits let you get bug fixes without waking up to a breaking change.
+#
+# ---------------------------------------------------------------------------
+# NOTE ON PYTORCH (read this if the download looks enormous)
+# On Linux, plain `pip install torch` pulls the CUDA build, roughly 2.5 GB, even
+# if you have no NVIDIA GPU. Everything in this course is designed to run on
+# CPU, so on Linux install the much smaller CPU-only build FIRST:
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# then run `pip install -r requirements.txt` as normal.
+# On macOS and Windows the default install is already the right one.
+# ---------------------------------------------------------------------------
+
+# Core scientific stack
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+
+# Jupyter
+jupyterlab
+ipywidgets
+
+# Adds a Git panel and a terminal to JupyterLab. On Windows especially, this is
+# the easiest way to get to a terminal without hunting for one.
+jupyterlab-git
+
+# Classical ML (Units 1-2)
+scikit-learn
+optuna
+
+# On Linux, plain `xgboost` depends on nvidia-nccl, which is ~290 MB of GPU
+# libraries this course never uses. `xgboost-cpu` is the same version from the
+# same maintainers, built without them, and still imports as `import xgboost`.
+xgboost-cpu; sys_platform == "linux"
+xgboost; sys_platform != "linux"
+
+# Deep learning (Units 3-5) - see the PyTorch note above
+torch<3.0
+torchvision
+torchmetrics
+
+# Transformers and LLMs (Unit 5)
+transformers<6.0
+datasets<6.0
+tokenizers
+sentence-transformers
+accelerate
+peft
+einops
+
+# Utilities
+pillow
+requests
+tqdm
+
+# Git hygiene - strips notebook outputs so .ipynb diffs stay readable
+nbstripout
